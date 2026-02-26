@@ -117,17 +117,7 @@ function initHeroAnimations() {
         });
     });
 
-    // Shrink Logo on Scroll
-    gsap.to('.nav-name', {
-        fontSize: '1.4rem',
-        marginTop: '0px',
-        scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: '300 top',
-            scrub: true
-        }
-    });
+    // Logo resizing removed
 
     // Gallery Reveal Animation
     const projectBlocks = document.querySelectorAll('.project-block');
