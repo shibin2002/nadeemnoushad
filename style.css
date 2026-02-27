@@ -590,11 +590,10 @@ html.lenis {
     margin-bottom: var(--spacing-md);
 }
 
-/* Project Grid - horizontal row, thumbnails fill section */
+/* Project Grid - 3 thumbnails per row */
 .project-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding-top: 2rem;
     width: 100%;
@@ -602,7 +601,6 @@ html.lenis {
 
 .project-block {
     position: relative;
-    flex: 1 1 0;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -1160,16 +1158,11 @@ a.project-link {
         padding: 12px 0;
     }
 
-    /* Latest Work - horizontal row, smaller on mobile */
+    /* Latest Work - 2 per row on tablet/mobile */
     .project-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         padding-top: 1.5rem;
-    }
-
-    .project-block {
-        min-width: 140px;
-        max-width: 100%;
-        flex: 1 1 140px;
     }
 
     .project-hover-overlay {

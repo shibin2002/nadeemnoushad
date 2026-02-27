@@ -17,12 +17,10 @@ const lenis = new Lenis({
     infinite: false,
 });
 
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
+// Sync Lenis with ScrollTrigger so scroll-based animations (e.g. about highlighter) update
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
 
 // Live Clock in Nav
 function updateClock() {
