@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Everyman | Nadeem Noushad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <nav class="sticky-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-name">NADEEM NOUSHAD <span>Cinematographer</span></a>
+      <div class="nav-right-group">
+        <a href="index.html#contact" class="btn-talk">Contact</a>
+        <a href="index.html#work" class="btn-back">← Work</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="project-detail-page">
+    <section class="project-detail-hero">
+      <video class="project-detail-video" controls playsinline preload="auto">
+        <source src="/Everyman_130226_v1.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="project-detail-content">
+      <div class="project-detail-container">
+        <div class="project-detail-description">
+          <h1 class="project-detail-title">Everyman</h1>
+          <p class="project-detail-meta">Commercial | Cinematic Edit · 2025 · Director of Photography</p>
+          <p class="project-detail-text">
+            A cinematic commercial piece blending controlled lighting and deliberate camera movement to support the brand narrative. Shot on location with a focus on precision and visual clarity.
+          </p>
+        </div>
+        <div class="project-detail-frames">
+          <div class="frames-label">Still Frames</div>
+          <div class="frames-viewer">
+            <div class="frames-viewer-slides frames-stack frames-stack-6">
+              <div class="frame active"><img src="/v1.jpeg" alt="Frame 1"></div>
+              <div class="frame"><img src="/v2.jpeg" alt="Frame 2"></div>
+              <div class="frame"><img src="/v3.jpeg" alt="Frame 3"></div>
+              <div class="frame"><img src="/v4.jpeg" alt="Frame 4"></div>
+              <div class="frame"><img src="/v5.jpeg" alt="Frame 5"></div>
+              <div class="frame"><img src="/v6.jpeg" alt="Frame 6"></div>
+            </div>
+            <button type="button" class="frames-prev" aria-label="Previous frame">←</button>
+            <button type="button" class="frames-next" aria-label="Next frame">→</button>
+            <div class="frames-dots" role="tablist"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer project-detail-footer">
+      <div class="footer-container">
+        <div class="footer-col contact-col">
+          <a href="mailto:nadeemnoushad4n@gmail.com" class="footer-email">nadeemnoushad4n@gmail.com</a>
+          <p class="footer-phone">+44 7799486444</p>
+        </div>
+        <div class="footer-col">
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#work">Works</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <ul class="footer-socials">
+            <li><a href="https://www.instagram.com/nadeeemnaushad" target="_blank">Instagram <span class="arrow">↗</span></a></li>
+            <li><a href="https://www.linkedin.com/in/nadeem-naushad-8079a5280" target="_blank">LinkedIn <span class="arrow">↗</span></a></li>
+            <li><a href="https://vimeo.com/user213269654" target="_blank">Vimeo <span class="arrow">↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <p>© NADEEM NOUSHAD 2025. ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <script src="./project-detail.js"></script>
+</body>
+
+</html>

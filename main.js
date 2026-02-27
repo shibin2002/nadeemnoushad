@@ -201,24 +201,7 @@ if (menuToggle && menuOverlay) {
     });
 }
 
-// Project Hover Video Play
-const projectBlocks = document.querySelectorAll('.project-block');
-projectBlocks.forEach(block => {
-    const video = block.querySelector('video');
-    const media = block.querySelector('.project-media');
-
-    media.addEventListener('mouseenter', () => {
-        video.muted = false;
-        video.volume = 1;
-        video.play();
-    });
-
-    media.addEventListener('mouseleave', () => {
-        video.pause();
-        video.muted = true;
-        video.currentTime = 0;
-    });
-});
+// Project blocks: thumbnail only, no video play on hover; click navigates to detail page
 
 // Sticky Nav persistence and styling on scroll
 const nav = document.querySelector('.sticky-nav');
@@ -240,9 +223,9 @@ window.addEventListener('scroll', () => {
 
 // Project Animations
 function initProjectAnimations() {
-    gsap.utils.toArray('.project-block').forEach((project, i) => {
+    gsap.utils.toArray('.project-block').forEach((project) => {
         const media = project.querySelector('.project-media');
-        const info = project.querySelector('.project-info');
+        if (!media) return;
 
         // Parallax media
         gsap.fromTo(media, {
@@ -257,15 +240,15 @@ function initProjectAnimations() {
             }
         });
 
-        // Entrance animation
-        gsap.from(info, {
-            x: i % 2 === 0 ? -100 : 100,
+        // Entrance animation for media
+        gsap.from(media, {
+            y: 40,
             opacity: 0,
-            duration: 1.2,
+            duration: 1,
             ease: 'power4.out',
             scrollTrigger: {
                 trigger: project,
-                start: 'top 80%',
+                start: 'top 85%',
                 toggleActions: 'play none none reverse'
             }
         });
@@ -296,9 +279,9 @@ function initAboutHighlighter() {
 }
 initAboutHighlighter();
 
-// Lazy Load Videos
-const lazyVideos = document.querySelectorAll('video.project-video-thumb');
-const videoObserver = new IntersectionObserver((entries, observer) => {
+// Lazy load thumbnail videos (metadata only for first frame)
+const lazyThumbnails = document.querySelectorAll('video.project-thumbnail');
+const thumbObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const video = entry.target;
@@ -308,6 +291,6 @@ const videoObserver = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.1 });
 
-lazyVideos.forEach(video => {
-    videoObserver.observe(video);
+lazyThumbnails.forEach(video => {
+    thumbObserver.observe(video);
 });
