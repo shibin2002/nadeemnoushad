@@ -15,6 +15,8 @@ export default defineConfig({
         'project-everyman': resolve(__dirname, 'project-everyman.html'),
         'project-inlaws': resolve(__dirname, 'project-inlaws.html'),
         'project-yours-twice': resolve(__dirname, 'project-yours-twice.html'),
+        'project-stopmotion': resolve(__dirname, 'project-stopmotion.html'),
+        'project-the-hook': resolve(__dirname, 'project-the-hook.html'),
       },
     },
   },
