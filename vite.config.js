@@ -18,6 +18,7 @@ export default defineConfig({
         'project-currys': resolve(__dirname, 'project-currys.html'),
         'project-stopmotion': resolve(__dirname, 'project-stopmotion.html'),
         'project-the-hook': resolve(__dirname, 'project-the-hook.html'),
+        'project-twix-tied': resolve(__dirname, 'project-twix-tied.html'),
       },
     },
   },
