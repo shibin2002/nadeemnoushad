@@ -1532,3 +1532,49 @@ a.project-link {
     .frame.layer-6 { width: 65%; left: 28%; top: 80px; }
     .frames-stack-6 { min-height: 280px; }
 }
+/* Dynamic project grid — auto-balances columns based on item count */
+
+.project-grid {
+  display: grid;
+  gap: 16px; /* adjust to match your existing gap */
+}
+
+/* 1 item → full width */
+.project-grid:has(.project-block:nth-child(1):last-child) {
+  grid-template-columns: 1fr;
+}
+
+/* 2 items → 1 / 1 */
+.project-grid:has(.project-block:nth-child(2):last-child) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 items → 1 / 1 / 1 */
+.project-grid:has(.project-block:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 4 items → 2 / 2  (two rows of 2) */
+.project-grid:has(.project-block:nth-child(4):last-child) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 5 items → 3 top / 2 bottom  */
+.project-grid:has(.project-block:nth-child(5):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 6 items → 3 / 3 */
+.project-grid:has(.project-block:nth-child(6):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 7 items → 4 / 3  */
+.project-grid:has(.project-block:nth-child(7):last-child) {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 8 items → 4 / 4 */
+.project-grid:has(.project-block:nth-child(8):last-child) {
+  grid-template-columns: repeat(4, 1fr);
+}
